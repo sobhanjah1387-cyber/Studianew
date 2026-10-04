@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<title>استودیا | Studia</title>
+<link href="https://fonts.googleapis.com/css2?family=Chewy&family=Lalezar&family=Baloo+Bhaijaan+2:wght@400;600;800&family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#b8d0ff;--bg2:#cdd9ee;--bg3:#b5eef0;--g:rgba(255,255,255,.38);--gb:rgba(255,255,255,.7);--tx:#1d2140;--mu:#5d6384;--ac:#2b6cff;--ac2:#00c2d4;--ok:#16a870;--no:#e5484d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#0d1b3d;--bg2:#10294f;--bg3:#06343a;--g:rgba(255,255,255,.09);--gb:rgba(255,255,255,.22);--tx:#eef0ff;--mu:#a4a9cc}}
+:root[data-theme="dark"]{--bg1:#0d1b3d;--bg2:#10294f;--bg3:#06343a;--g:rgba(255,255,255,.09);--gb:rgba(255,255,255,.22);--tx:#eef0ff;--mu:#a4a9cc}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0}
+body{font-family:Chewy,Lalezar,'Baloo Bhaijaan 2',Tahoma,sans-serif;font-size:16px;color:var(--tx);background:var(--bg1);overflow:hidden}
+.bg{position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 15% 10%,var(--bg2),transparent 55%),radial-gradient(circle at 85% 30%,var(--bg3),transparent 50%),radial-gradient(circle at 40% 100%,var(--bg1),transparent 60%);}
+.bg i{position:absolute;border-radius:50%;filter:blur(40px);opacity:.6;animation:fl 14s ease-in-out infinite alternate}
+.bg i:nth-child(1){width:220px;height:220px;background:#2b6cff;top:8%;left:-60px}
+.bg i:nth-child(2){width:180px;height:180px;background:#00d0ff;bottom:18%;right:-50px;animation-delay:-5s}
+@keyframes fl{to{transform:translate(40px,60px) scale(1.15)}}
+#app{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;max-width:560px;margin:0 auto}
+main{flex:1;overflow-y:auto;padding:16px 16px 100px}
+.glass{background:var(--g);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);border:1px solid var(--gb);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -1px 0 rgba(255,255,255,.1),0 8px 30px rgba(40,30,120,.12)}
+.card{padding:16px;margin-bottom:14px}
+h1,h2{margin:0}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.brand b{font-family:Chewy,Lalezar,cursive;font-size:44px;font-weight:400;letter-spacing:1px;display:inline-block;transform:rotate(-3deg);text-shadow:0 3px 0 rgba(255,122,26,.5);background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
+.brand small{display:block;color:var(--mu);font-size:12px}
+h2{font-family:Lalezar,'Baloo Bhaijaan 2',Vazirmatn;font-weight:400;font-size:22px;margin-bottom:10px}
+.mu{color:var(--mu);font-size:13px}
+nav{position:fixed;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);width:min(520px,calc(100% - 24px));display:flex;padding:6px;z-index:5;border-radius:30px}
+nav button{font-weight:600;flex:1;border:0;background:none;color:var(--mu);font:inherit;font-size:11px;padding:7px 0;border-radius:24px;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer}
+nav button span{display:flex;height:24px}
+nav button.on{color:var(--tx);background:var(--gb);box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+button.b,.chip{font:inherit;border:1px solid var(--gb);background:var(--g);color:var(--tx);border-radius:16px;padding:9px 14px;cursor:pointer;backdrop-filter:blur(10px)}
+button.p{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border:0;font-weight:600}
+.row{display:flex;gap:8px;align-items:center}
+.wrap{display:flex;flex-wrap:wrap;gap:8px}
+input,textarea{font:inherit;color:var(--tx);background:rgba(255,255,255,.25);border:1px solid var(--gb);border-radius:14px;padding:10px 12px;width:100%;outline:none}
+input:focus,textarea:focus{border-color:var(--ac)}
+textarea{min-height:130px;resize:vertical;line-height:1.9}
+.item{display:flex;align-items:center;gap:8px;padding:10px 12px;margin-bottom:8px;border-radius:18px}
+.item .t{flex:1;min-width:0}
+.item.done .t{text-decoration:line-through;opacity:.55}
+.item.miss .t{color:var(--no)}
+.ib{border:0;background:rgba(255,255,255,.3);border-radius:12px;width:34px;height:34px;cursor:pointer;font-size:15px;color:var(--tx)}
+.ib.on{background:var(--ok);color:#fff}.ib.no.on{background:var(--no)}.ib.st.on{background:#f5b301}
+.mi{width:64px;text-align:center;padding:8px 4px}
+.days{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px}
+.days .chip{white-space:nowrap;padding:8px 12px}
+.on.chip{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border:0}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.stat{padding:14px;text-align:center}
+.stat b{display:block;font-family:Lalezar;font-weight:400;font-size:24px}
+.bar{height:10px;border-radius:9px;background:rgba(255,255,255,.3);overflow:hidden;margin:8px 0}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--ac2));border-radius:9px;transition:width .4s}
+.toast{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);padding:10px 18px;z-index:9;border-radius:20px;display:none}
+.empty{text-align:center;color:var(--mu);padding:16px 0;font-size:14px}
+body *{font-weight:400!important}
+input,textarea{font-family:'Baloo Bhaijaan 2',Lalezar,Tahoma,sans-serif;font-size:16px}
+nav button,.chip,button.b{letter-spacing:.2px}
+</style>
+</head>
+<body>
+<div class="bg"><i></i><i></i></div>
+<div id="app"><main id="v"></main>
+<nav class="glass" id="nav"></nav></div>
+<div class="toast glass" id="toast"></div>
+<script>
+const LOGO='<svg width="56" height="56" viewBox="0 0 64 64"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1536ff"/><stop offset=".55" stop-color="#1b86ff"/><stop offset="1" stop-color="#00d4e6"/></linearGradient><linearGradient id="ls" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d9e4ff"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="14" fill="url(#lg)"/><path d="M43 22C38 13 22 14 22 24C22 34 43 29 43 39C43 48 27 49 21 42" fill="none" stroke="#001a66" stroke-opacity=".25" stroke-width="7" stroke-linecap="round" transform="translate(1.5,2.5)"/><path d="M43 22C38 13 22 14 22 24C22 34 43 29 43 39C43 48 27 49 21 42" fill="none" stroke="url(#ls)" stroke-width="7" stroke-linecap="round"/><path d="M12 54Q22 49 32 54Q42 49 52 54" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2.8" stroke-linecap="round"/><path d="M51 5L40 21H47L44 32L57 14H49Z" fill="#ffb02e"/></svg>';
+const DAYS=['شنبه','یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنجشنبه','جمعه'];
+const KEY='studia_v1';
+let S={subjects:['ریاضی','فیزیک','شیمی','زیست','ادبیات'],draft:[],plan:[[],[],[],[],[],[],[]],logs:[]};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const n=x=>Number(x).toLocaleString('fa-IR');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fm=m=>{m=Math.round(m);const h=Math.floor(m/60),r=m%60;if(!h)return n(r)+' دقیقه';return n(h)+' ساعت'+(r?' و '+n(r)+' دقیقه':'')};
+const todayIdx=()=>(new Date().getDay()+1)%7;
+const pDate=d=>new Intl.DateTimeFormat('fa-IR-u-ca-persian',{dateStyle:'full'}).format(d);
+const pm=d=>new Intl.DateTimeFormat('en-u-ca-persian',{year:'numeric',month:'numeric'}).format(d);
+const iso=d=>d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+let tab='home',day=todayIdx(),flt='all';
+const IC={home:'<path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-4.5v-6h-7v6H4a1 1 0 0 1-1-1z"/>',report:'<path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/>',plan:'<rect x="3" y="5" width="18" height="16" rx="4"/><path d="M3 10h18M8 3v4M16 3v4"/>',rec:'<path d="M5 21V11M12 21V4M19 21v-8"/>',set:'<path d="M4 7h9M19 7h1M4 17h1M11 17h9"/><circle cx="16" cy="7" r="2.5"/><circle cx="8" cy="17" r="2.5"/>'};
+const svg=k=>`<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IC[k]}</svg>`;
+const TABS=[['home','','خانه'],['report','','گزارش'],['plan','','برنامه'],['rec','','رکورد'],['set','','تنظیمات']];
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',1800)}
+const total=a=>a.reduce((s,i)=>s+(+i.m||0),0);
+function reportText(){if(!S.draft.length)return '';return 'گزارش مطالعه – '+pDate(new Date())+'\n\n'+S.draft.map(i=>'• '+i.s+': '+fm(i.m)).join('\n')+'\n\nمجموع: '+fm(total(S.draft))}
+function stats(){const now=new Date(),t=iso(now),ws=new Date(now);ws.setDate(now.getDate()-todayIdx());ws.setHours(0,0,0,0);const mk=pm(now);let d=0,w=0,m=0,a=0;
+S.logs.forEach(l=>{const dt=new Date(l.ts),x=l.total;a+=x;if(iso(dt)==t)d+=x;if(dt>=ws)w+=x;if(pm(dt)==mk)m+=x});return{d,w,m,a}}
+function render(){
+document.getElementById('nav').innerHTML=TABS.map(t=>`<button class="${tab==t[0]?'on':''}" onclick="go('${t[0]}')"><span>${svg(t[0])}</span>${t[2]}</button>`).join('');
+const v=document.getElementById('v');v.innerHTML=({home,report,plan,rec,set})[tab]()}
+function go(t){tab=t;render();document.getElementById('v').scrollTop=0}
+function home(){const p=S.plan[todayIdx()],dn=p.filter(i=>i.st==1).length,pc=p.length?Math.round(dn/p.length*100):0,st=stats();
+return `<div class="brand">${LOGO}<div><b>Studia</b><small>${pDate(new Date())}</small></div></div>
+<div class="glass card"><h2>پیش‌نویس گزارش</h2>${S.draft.length?`<div class="mu" style="line-height:2">${S.draft.map(i=>esc(i.s)+' – '+fm(i.m)).join('<br>')}</div><p class="mu">مجموع: ${fm(total(S.draft))}</p><button class="b p" onclick="go('report')">ادامه گزارش</button>`:`<div class="empty">پیش‌نویسی نداری</div><button class="b" onclick="go('report')">شروع گزارش جدید</button>`}</div>
+<div class="glass card"><h2>برنامه امروز (${DAYS[todayIdx()]})</h2>${p.length?`<div class="mu">${n(dn)} از ${n(p.length)} انجام شده</div><div class="bar"><i style="width:${pc}%"></i></div>${p.filter(i=>i.st!=1).slice(0,4).map(i=>`<div>▫️ ${esc(i.t)}</div>`).join('')}<br><button class="b" onclick="day=todayIdx();go('plan')">باز کردن برنامه</button>`:`<div class="empty">برنامه‌ای برای امروز نیست</div><button class="b" onclick="day=todayIdx();go('plan')">افزودن برنامه</button>`}</div>
+<div class="glass card"><h2>مطالعه امروز</h2><b style="font-size:22px">${fm(st.d)}</b></div>`}
+function report(){const sel=S.draft.map(i=>i.s);
+return `<h2>گزارش کار</h2>
+<div class="glass card"><div class="mu" style="margin-bottom:8px">درس را انتخاب کن</div><div class="wrap">${S.subjects.length?S.subjects.map((s,i)=>`<button class="chip ${sel.includes(s)?'on':''}" onclick="togS(${i})">${esc(s)}</button>`).join(''):'<span class="empty">اول در تنظیمات درس اضافه کن</span>'}</div></div>
+${S.draft.map((d,i)=>`<div class="glass item"><div class="t">${esc(d.s)}</div><button class="ib" onclick="adj(${i},-15)">−</button><input class="mi" type="number" inputmode="numeric" value="${d.m}" onchange="setM(${i},this.value)"><button class="ib" onclick="adj(${i},15)">+</button><span class="mu">دقیقه</span></div>`).join('')}
+${S.draft.length?`<div class="glass card"><div class="mu">متن گزارش</div><textarea readonly id="rt">${esc(reportText())}</textarea><div class="row" style="margin-top:10px"><button class="b p" style="flex:1" onclick="copyR()">📋 کپی متن</button><button class="b" style="flex:1" onclick="saveR()">ثبت در رکورد</button></div><button class="b" style="margin-top:8px;width:100%" onclick="S.draft=[];save();render()">پاک کردن پیش‌نویس</button></div>`:''}`}
+function togS(i){const s=S.subjects[i],k=S.draft.findIndex(d=>d.s==s);if(k>-1)S.draft.splice(k,1);else S.draft.push({s,m:60});save();render()}
+function adj(i,d){S.draft[i].m=Math.max(0,(+S.draft[i].m||0)+d);save();render()}
+function setM(i,v){S.draft[i].m=Math.max(0,+v||0);save();render()}
+function copyR(){const t=reportText();const ok=()=>toast('کپی شد ✓');if(navigator.clipboard)navigator.clipboard.writeText(t).then(ok,fb);else fb();function fb(){const e=document.getElementById('rt');e.removeAttribute('readonly');e.select();document.execCommand('copy');e.setAttribute('readonly','');ok()}}
+function saveR(){if(!total(S.draft))return toast('مدت مطالعه را وارد کن');S.logs.push({ts:Date.now(),items:S.draft,total:total(S.draft)});S.draft=[];save();toast('در رکورد ثبت شد ✓');go('rec')}
+function plan(){const p=S.plan[day];
+return `<h2>برنامه هفتگی</h2>
+<div class="days">${DAYS.map((d,i)=>`<button class="chip ${i==day?'on':''}" onclick="day=${i};render()">${d}</button>`).join('')}</div>
+<div class="glass card"><div class="row"><input id="ni" placeholder="درس / کار جدید..." list="sl" onkeydown="if(event.key=='Enter')addP()"><datalist id="sl">${S.subjects.map(s=>`<option value="${esc(s)}">`).join('')}</datalist><button class="b p" onclick="addP()">افزودن</button></div></div>
+${p.length?p.map((i,k)=>`<div class="glass item ${i.st==1?'done':i.st==2?'miss':''}"><div class="t">${esc(i.t)}</div><button class="ib ${i.st==1?'on':''}" onclick="stP(${k},1)">✓</button><button class="ib no ${i.st==2?'on':''}" onclick="stP(${k},2)">✕</button><button class="ib st ${i.b?'on':''}" onclick="bmP(${k})">★</button><button class="ib" onclick="dlP(${k})">🗑</button></div>`).join(''):'<div class="empty">برای این روز چیزی ثبت نشده</div>'}
+<div class="mu" style="text-align:center">✓ خوانده شد (خط می‌خورد) · ✕ نخوندم · ★ نشان‌شده</div>`}
+function addP(){const e=document.getElementById('ni'),t=e.value.trim();if(!t)return;S.plan[day].push({id:Date.now(),t,st:0,b:0});save();render()}
+function stP(k,s){const i=S.plan[day][k];i.st=i.st==s?0:s;save();render()}
+function bmP(k){const i=S.plan[day][k];i.b=i.b?0:1;save();render()}
+function dlP(k){S.plan[day].splice(k,1);save();render()}
+function rec(){const s=stats();let all=[];S.plan.forEach((p,d)=>p.forEach(i=>all.push({...i,d})));
+const f=all.filter(i=>flt=='bm'?i.b:flt=='done'?i.st==1:true);
+return `<h2>رکورد</h2>
+<div class="stats"><div class="glass stat"><span class="mu">امروز</span><b>${fm(s.d)}</b></div><div class="glass stat"><span class="mu">این هفته</span><b>${fm(s.w)}</b></div><div class="glass stat"><span class="mu">این ماه</span><b>${fm(s.m)}</b></div><div class="glass stat"><span class="mu">مجموع</span><b>${fm(s.a)}</b></div></div>
+<h2>درس‌ها</h2>
+<div class="days">${[['all','همه'],['bm','★ نشان‌شده'],['done','✓ انجام‌شده']].map(x=>`<button class="chip ${flt==x[0]?'on':''}" onclick="flt='${x[0]}';render()">${x[1]}</button>`).join('')}</div>
+${f.length?f.map(i=>`<div class="glass item ${i.st==1?'done':''}"><div class="t">${esc(i.t)}<div class="mu">${DAYS[i.d]}</div></div>${i.b?'⭐':''}${i.st==1?'✅':i.st==2?'❌':''}</div>`).join(''):'<div class="empty">موردی نیست</div>'}`}
+function set(){return `<h2>تنظیمات</h2>
+<div class="glass card"><div class="mu" style="margin-bottom:8px">درس‌های گزارش (برای انتخاب سریع)</div><div class="row"><input id="si" placeholder="نام درس..." onkeydown="if(event.key=='Enter')addS()"><button class="b p" onclick="addS()">افزودن</button></div></div>
+${S.subjects.map((s,i)=>`<div class="glass item"><div class="t">${esc(s)}</div><button class="ib" onclick="S.subjects.splice(${i},1);save();render()">🗑</button></div>`).join('')}
+<div class="glass card" style="margin-top:14px"><button class="b" style="width:100%" onclick="if(confirm('همه رکوردها پاک شود؟')){S.logs=[];save();render()}">پاک کردن رکوردها</button></div>
+<div class="mu" style="text-align:center;margin-top:10px">Studia · استودیا</div>`}
+function addS(){const e=document.getElementById('si'),t=e.value.trim();if(!t||S.subjects.includes(t))return;S.subjects.push(t);save();render()}
+render();
+</script>
+</body>
+</html>
